@@ -1,0 +1,6 @@
+name: 'Custom Module'
+type: module
+core_version_requirement: ^9.4 || ^10
+description: 'Custom module for config form'
+package: 'Custom'
+configure: 'config_mymodule.admin_settings'
