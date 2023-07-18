@@ -1,0 +1,8 @@
+demo_route.route:
+  path: '/exampleroute'
+  defaults:
+    _title: 'Route Demo'
+    _controller: '\Drupal\demo_route\Controller\RouteController::simpleContent'
+  requirements:
+    _role: 'administrator+content_editor'
+    _permisison: 'access the custom page'
