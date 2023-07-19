@@ -6,3 +6,12 @@ demo_route.route:
   requirements:
     _role: 'administrator+content_editor'
     _permisison: 'access the custom page'
+    _custom_access: 'TRUE'
+
+demo_route.dynamic_parameter:
+  path: '/campaign/value/{value}'
+  defaults:
+    _title: 'Fetching Dynamic parameter'
+    _controller: '\Drupal\demo_route\Controller\RouteController:dynamicParameter'
+  requirements:
+    _permission: 'access content'

@@ -20,5 +20,16 @@ class RouteController extends ControllerBase {
 						Time flies like an arrow.'),
 		];
 	}
+
+	/**
+ 	* Fetching parameters from the route.
+	*/
+	public function dynamicParameter(string $value) {
+  	return [
+    	'#type' => 'markup',
+    	'#markup' => $this->t('@value Fetched from the url', ['@value' => $value]),
+    ];
+  }
 }
+
 ?>

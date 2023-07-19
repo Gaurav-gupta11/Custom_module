@@ -1,5 +1,5 @@
 services:
-  demo_route.route:
-    class: Drupal\demo_route\Routing\DemoRoute
+  demo_route.access_check.custom:
+    class: Drupal\demo_route\Access\CustomAccessCheck
     tags:
       - { name: event_subscriber }
