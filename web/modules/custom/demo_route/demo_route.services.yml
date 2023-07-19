@@ -1,0 +1,5 @@
+services:
+  demo_route.route:
+    class: Drupal\demo_route\Routing\DemoRoute
+    tags:
+      - { name: event_subscriber }
