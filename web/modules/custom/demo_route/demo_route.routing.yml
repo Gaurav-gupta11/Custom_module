@@ -1,0 +1,15 @@
+demo_route.route:
+  path: '/exampleroute'
+  defaults:
+    _title: 'Route Demo'
+    _controller: '\Drupal\demo_route\Controller\RouteController::simpleContent'
+  requirements:
+    _mycustom_access_check: 'TRUE'
+    
+demo_route.dynamic_parameter:
+  path: '/campaign/value/{value}'
+  defaults:
+    _title: 'Fetching Dynamic parameter'
+    _controller: '\Drupal\demo_route\Controller\RouteController:dynamicParameter'
+  requirements:
+    _permission: 'access content'
