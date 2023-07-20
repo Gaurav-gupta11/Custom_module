@@ -2,28 +2,44 @@
 
 namespace Drupal\demo_route\Access;
 
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Routing\Access\AccessInterface;
 use Drupal\Core\Session\AccountInterface;
-use Drupal\Core\Access\AccessResult;
+use Symfony\Component\Routing\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Checks access for displaying configuration translation page.
+ * Class MyCustomAccessCheck
+ * @package Drupal\mymodule\Access
  */
-class CustomAccessCheck implements AccessInterface {
+class CustomAccessCheck implements AccessInterface
+{
+  /**
+   * @return string
+   */
+  public function appliesTo()
+  {
+    return '_mycustom_access_check';
+  }
 
   /**
-   * A custom access check.
-   *
-   * @param \Drupal\Core\Session\AccountInterface $account
-   *   Run access checks for this account.
-   *
-   * @return \Drupal\Core\Access\AccessResultInterface
-   *   The access result.
+   * @param Route $route
+   * @param Request $request
+   * @param AccountInterface $account
+   * @return AccessResult|\Drupal\Core\Access\AccessResultAllowed
    */
-  public function access(AccountInterface $account) {
-    // Check permissions and combine that with any custom access checking needed. Pass forward
-    // parameters from the route and/or request as needed.
-    return ($account->hasPermission('access the custom page')) ? AccessResult::allowed() : AccessResult::forbidden();
+  public function access(Route $route, Request $request, AccountInterface $account) {
+    // Get the roles assigned to the account
+    $roles = $account->getRoles();
+  
+    // Check if the account has the 'content_editor' or 'administrator' role
+    if (in_array('content_editor', $roles) || in_array('administrator', $roles)) {
+      return AccessResult::allowed();
+    } else {
+      return AccessResult::forbidden();
+    }
   }
+  
+
 }
 ?>

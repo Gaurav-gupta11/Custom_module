@@ -4,10 +4,8 @@ demo_route.route:
     _title: 'Route Demo'
     _controller: '\Drupal\demo_route\Controller\RouteController::simpleContent'
   requirements:
-    _role: 'administrator+content_editor'
-    _permisison: 'access the custom page'
-    _custom_access: 'TRUE'
-
+    _mycustom_access_check: 'TRUE'
+    
 demo_route.dynamic_parameter:
   path: '/campaign/value/{value}'
   defaults:
