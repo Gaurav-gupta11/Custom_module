@@ -12,8 +12,10 @@ module:
   config_mymodule: 0
   contact: 0
   contextual: 0
+  custom_block_module: 0
   datetime: 0
   dblog: 0
+  demo_route: 0
   devel: 0
   dynamic_page_cache: 0
   editor: 0
@@ -34,6 +36,7 @@ module:
   mysql: 0
   node: 0
   options: 0
+  otll_ajax_form: 0
   page_cache: 0
   path: 0
   path_alias: 0

@@ -1,0 +1,5 @@
+services:
+  custom_welcome_block.redirect_subscriber:
+    class: Drupal\custom_block_module\EventSubscriber\CustomWelcomeRedirectSubscriber
+    tags:
+      - { name: event_subscriber }

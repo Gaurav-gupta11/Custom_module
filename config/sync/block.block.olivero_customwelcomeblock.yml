@@ -1,0 +1,25 @@
+uuid: d80a4b58-6c1c-477d-96f5-4a5a02a1cf9e
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_block_module
+    - system
+  theme:
+    - olivero
+id: olivero_customwelcomeblock
+theme: olivero
+region: content
+weight: -6
+provider: null
+plugin: custom_welcome_block
+settings:
+  id: custom_welcome_block
+  label: 'Custom Welcome Block'
+  label_display: visible
+  provider: custom_block_module
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /custom-welcome-page
