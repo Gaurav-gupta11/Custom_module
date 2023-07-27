@@ -1,0 +1,5 @@
+config_mymodule_css:
+  version: 1.0
+  css:
+    theme:
+      css/config_mymodule.css: {}
