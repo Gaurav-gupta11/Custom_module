@@ -1,0 +1,7 @@
+custom_block_module.form_route:
+  path: '/group-form'
+  defaults:
+    _title: 'Showing group form'
+    _form: '\Drupal\custom_block_module\Form\CustomForm'
+  requirements:
+    _permission: 'access content'

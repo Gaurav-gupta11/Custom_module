@@ -1,4 +1,4 @@
-uuid: d80a4b58-6c1c-477d-96f5-4a5a02a1cf9e
+uuid: 72846eb2-fc06-4ef0-9d54-dea0e9ceda30
 langcode: en
 status: true
 dependencies:
@@ -7,19 +7,19 @@ dependencies:
     - system
   theme:
     - olivero
-id: olivero_customwelcomeblock
+id: olivero_customformblock
 theme: olivero
 region: content
-weight: -6
+weight: 0
 provider: null
-plugin: custom_welcome_block
+plugin: custom_form_block
 settings:
-  id: custom_welcome_block
-  label: 'Custom Welcome Block'
+  id: custom_form_block
+  label: 'Custom Form Block'
   label_display: visible
   provider: custom_block_module
 visibility:
   request_path:
     id: request_path
     negate: false
-    pages: /custom-welcome-page
+    pages: '<front>'

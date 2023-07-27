@@ -40,6 +40,6 @@ class CustomAccessCheck implements AccessInterface
     }
   }
   
-
+  
 }
 ?>
