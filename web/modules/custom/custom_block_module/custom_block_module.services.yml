@@ -1,5 +1,16 @@
 services:
-  custom_welcome_block.redirect_subscriber:
+  custom_block_module.redirect_subscriber:
     class: Drupal\custom_block_module\EventSubscriber\CustomWelcomeRedirectSubscriber
+    arguments:
+      - '@current_user'
+      - '@current_route_match'
     tags:
       - { name: event_subscriber }
+
+  custom_block_module.form:
+    class: Drupal\custom_block_module\Form\CustomForm
+    arguments:
+      - '@current_route_match'
+    tags:
+      - { name: form.type }
+
