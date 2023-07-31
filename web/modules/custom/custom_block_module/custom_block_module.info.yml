@@ -1,0 +1,7 @@
+name: Custom Block Module
+type: module
+description: 'Displays a welcome message based on user role'
+core_version_requirement: ^10
+package: custom
+dependecies:
+  - block

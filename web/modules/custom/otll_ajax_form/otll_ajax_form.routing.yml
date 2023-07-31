@@ -1,0 +1,8 @@
+otll_ajax_form:
+  path: '/otllajax'
+  defaults:
+    _form: '\Drupal\otll_ajax_form\Form\OTLLAjaxForm'
+    _title: 'OTLL Ajax Form'
+  requirements:
+    _permission: 'administer site configuration'
+
