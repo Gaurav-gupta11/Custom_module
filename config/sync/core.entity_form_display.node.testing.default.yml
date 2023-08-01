@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.testing.field_color
     - node.type.testing
   module:
+    - custom_color_field
     - path
     - text
 id: node.testing.default
@@ -31,7 +32,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_color:
-    type: null
+    type: hex_color_widget
     weight: 122
     region: content
     settings: {  }
