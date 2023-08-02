@@ -1,0 +1,16 @@
+<?php
+
+use Drupal\Core\Access\AccessResult;
+/**
+ * Implements _entity_field_access() to control field access.
+ */
+function custom_color_field_entity_field_access($operation, $field_definition, $account, $entity_type, $entity) {
+    // Check if the operation is "view" and the current user has the "administer site configuration" permission.
+    if ($operation === 'view' && $field_definition->getName() === 'custom_color_field' && $account->hasPermission('administer site configuration')) {
+      return AccessResult::allowed();
+    }
+  
+    // For other cases, fall back to default access behavior.
+    return AccessResult::neutral();
+  }
+  

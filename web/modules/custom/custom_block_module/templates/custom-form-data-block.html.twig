@@ -1,0 +1,12 @@
+{# custom_block_module/templates/custom-form-data-block.html.twig #}
+<div class="custom-form-data-block">
+  {% for group in content %}
+    <div class="group-container">
+      <div class="group-name">{{ group.group_name }}</div>
+      <div class="habitations-label">{{ group.habitations_label }}</div>
+      <div class="habitations-value">{{ group.habitations_value }}</div>
+      <div class="people-label">{{ group.people_label }}</div>
+      <div class="people-value">{{ group.people_value }}</div>
+    </div>
+  {% endfor %}
+</div>

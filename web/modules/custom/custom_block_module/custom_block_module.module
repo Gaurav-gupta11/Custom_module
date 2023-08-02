@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * Implements custom_block_module_theme().
+ */
+function custom_block_module_theme($existing, $type, $theme, $path) {
+  return [
+    'custom_form_data_block' => [
+      'variables' => ['content' => []],
+      'template' => 'custom-form-data-block', // Name of the twig template file.
+    ],
+  ];
+}
+?>

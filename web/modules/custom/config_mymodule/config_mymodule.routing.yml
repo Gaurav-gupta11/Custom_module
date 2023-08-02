@@ -1,0 +1,15 @@
+# config_mymodule.admin_settings:
+#   path: '/admin/config/config_mymodule'
+#   defaults:
+#     _form: '\Drupal\config_mymodule\Form\ModuleConfigurationForm'
+#     _title: 'User Form'
+#   requirements:
+#     _permission: 'administer site configuration'
+
+config_mymodule.ajax_customform:
+  path: '/admin/config/config_mymodule'
+  defaults:
+    _form: '\Drupal\config_mymodule\Form\AjaxCustomForm'
+    _title: 'User Ajax Form'
+  requirements:
+    _permission: 'administer site configuration'
