@@ -70,7 +70,7 @@ final class RGBWidget extends WidgetBase {
       $color = sprintf("#%02x%02x%02x", $r, $g, $b);
       $massaged_values[$key]['color'] = $color;
     }
-
+    
     return $massaged_values;
   }
 
