@@ -1,16 +1,28 @@
 <?php
 
 use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Session\AccountInterface;
+
 /**
- * Implements _entity_field_access() to control field access.
+ * Implements hook_entity_field_access.
  */
-function custom_color_field_entity_field_access($operation, $field_definition, $account, $entity_type, $entity) {
-    // Check if the operation is "view" and the current user has the "administer site configuration" permission.
-    if ($operation === 'view' && $field_definition->getName() === 'custom_color_field' && $account->hasPermission('administer site configuration')) {
-      return AccessResult::allowed();
-    }
-  
-    // For other cases, fall back to default access behavior.
+function custom_color_field_entity_field_access($operation, FieldDefinitionInterface $field_definition, AccountInterface $account, FieldItemListInterface $items = NULL) {
+  // Find out what field we're looking at.  If it isn't
+  if ($field_definition
+    ->getType() != 'custom_color_field') {
     return AccessResult::neutral();
   }
-  
+
+  // First we'll check if the user has the 'superuser'
+  // permissions that node provides. This way administrators
+  // will be able to administer the content types.
+  if ($account
+    ->hasPermission('Administer content')) {
+    return AccessResult::allowed();
+  }
+  else {
+    return AccessResult::forbidden();
+  }
+}
