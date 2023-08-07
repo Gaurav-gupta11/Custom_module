@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.testing.field_color
     - node.type.testing
   module:
+    - custom_color_field
     - text
     - user
 id: node.testing.default
@@ -22,7 +23,7 @@ content:
     weight: 101
     region: content
   field_color:
-    type: null
+    type: custom_field_bg_color
     label: above
     settings: {  }
     third_party_settings: {  }
