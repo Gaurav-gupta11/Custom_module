@@ -1,0 +1,20 @@
+uuid: 26335aab-a6a4-4a06-8ac3-07c6abf4e526
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_color_field
+    - node
+id: node.field_color
+field_name: field_color
+entity_type: node
+type: custom_color_field
+settings:
+  length: '250'
+module: custom_color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

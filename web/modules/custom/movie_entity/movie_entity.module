@@ -1,0 +1,34 @@
+<?php
+/**
+ * Implements hook_entity_type().
+ */
+function movie_entity_entity_type() {
+  $definitions = [];
+
+  $definitions['movie_entity'] = [
+    'label' => t('Movie Entity'),
+    'base_table' => 'movie_entity',
+    'revision_table' => 'movie_entity_revision',
+    'data_table' => 'movie_entity_field_data',
+    'entity_keys' => [
+      'id' => 'id',
+      'label' => 'title',
+      'revision' => 'vid',
+      'uuid' => 'uuid',
+    ],
+    'bundle_entity_type' => 'movie_entity_type',
+    'bundles' => [
+      'movie_entity_type' => [
+        'label' => t('Movie Entity Type'),
+        'admin' => [
+          'path' => 'admin/structure/movie_entity',
+          'add_path' => 'node/add/movie_entity',
+          'list_path' => 'admin/structure/movie_entity',
+        ],
+      ],
+    ],
+    // Additional properties...
+  ];
+
+  return $definitions;
+}
