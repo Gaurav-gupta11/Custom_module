@@ -1,0 +1,5 @@
+name: Custom Color Field
+type: module
+description: 'Create a field of colours.'
+core_version_requirement: ^10
+package: custom

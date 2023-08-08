@@ -1,0 +1,21 @@
+uuid: 5fda0d8c-ed7d-4abb-a00a-2615dcfb7ff3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_color
+    - node.type.testing
+  module:
+    - custom_color_field
+id: node.testing.field_color
+field_name: field_color
+entity_type: node
+bundle: testing
+label: color
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: custom_color_field

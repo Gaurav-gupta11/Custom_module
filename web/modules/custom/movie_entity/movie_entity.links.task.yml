@@ -1,0 +1,11 @@
+entity.movie_entity.delete_form:
+  route_name: movie_entity.delete
+  title: 'Delete'
+  base_route: movie_entity.canonical
+  weight: 10
+
+entity.movie_entity.revisions:
+  route_name: entity.movie_entity.revision
+  title: 'Revisions'
+  base_route: movie_entity.canonical
+  weight: 20

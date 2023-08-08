@@ -1,0 +1,24 @@
+<?php
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\node\NodeInterface;
+/**
+ * Implements hook_node_view() to modify movie node view.
+ */
+function movie_budget_node_view(array &$build, NodeInterface $node, EntityViewDisplayInterface $display, $view_mode) {
+  if ($node->getType() === 'movie') {
+    $budget_amount = \Drupal::config('movie_budget.settings')->get('budget_amount');
+    $movie_amount = $node->get('field_movie_amount')->value;
+
+    if ($budget_amount < $movie_amount) {
+      $message = 'The movie is over budget';
+    } elseif ($budget_amount > $movie_amount) {
+      $message = 'The movie is under budget';
+    } else {
+      $message = 'The movie is within budget';
+    }
+
+    $build['budget_message'] = [
+      '#markup' => '<p>' . $message . '</p>',
+    ];
+  }
+}
