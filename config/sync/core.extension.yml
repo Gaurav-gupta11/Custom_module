@@ -16,6 +16,7 @@ module:
   contextual: 0
   custom_block_module: 0
   custom_color_field: 0
+  custom_menu: 0
   datetime: 0
   dblog: 0
   demo_route: 0
