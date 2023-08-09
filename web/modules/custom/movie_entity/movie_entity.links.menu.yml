@@ -1,0 +1,12 @@
+entity.movie_entity.collection:
+  title: 'List of Movies'
+  description: 'Manage movies'
+  route_name: movie_entity.list
+  parent: system.admin
+  weight: 20
+
+entity.movie_entity.add_form:
+  title: 'Add Movie'
+  description: 'Add a new movie'
+  route_name: movie_entity.add
+  parent: entity.movie_entity.collection
