@@ -15,7 +15,7 @@ class MovieListBuilder extends \Drupal\Core\Entity\EntityListBuilder {
   public function buildHeader() {
     $header['id'] = $this->t('ID');
     $header['title'] = $this->t('Title');
-    // $header['movie_price'] = $this->t('Movie Price');
+    $header['movie_price'] = $this->t('Movie Price');
     return $header + parent::buildHeader();
   }
 
@@ -26,7 +26,7 @@ class MovieListBuilder extends \Drupal\Core\Entity\EntityListBuilder {
     // $entity is an instance of your Movie entity.
     $row['id'] = $entity->id();
     $row['title'] = $entity->label();
-    // $row['movie_price'] = $entity->get('movie_price')->value;
+    $row['movie_price'] = $entity->get('movie_price')->value;
     return $row + parent::buildRow($entity);
   }
 

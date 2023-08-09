@@ -25,15 +25,15 @@ class MovieForm extends ContentEntityForm {
     return $form;
   }
 
-  /**
+/**
  * {@inheritdoc}
  */
 public function save(array $form, FormStateInterface $form_state) {
-  parent::save($form, $form_state);
+  $entity = $this->getEntity();
+  $entity->save();
 
-  $url = Url::fromRoute('movie_entity.list');
+  $url = $entity->toUrl('canonical');
   $form_state->setRedirectUrl($url);
 }
-
 
 }

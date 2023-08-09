@@ -28,3 +28,11 @@ movie_entity.list:
     _entity_list: 'movie_entity'
   requirements:
     _permission: 'administer own offers'
+
+entity.movie_entity.canonical:
+  path: '/movie_entity/{movie_entity}'
+  defaults:
+    _entity_view: 'movie_entity'
+  requirements:
+    _permission: 'administer own offers'
+

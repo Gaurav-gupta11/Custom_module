@@ -5,9 +5,9 @@ use Drupal\node\NodeInterface;
  * Implements hook_node_view() to modify movie node view.
  */
 function movie_budget_node_view(array &$build, NodeInterface $node, EntityViewDisplayInterface $display, $view_mode) {
-  if ($node->getType() === 'movie') {
-    $budget_amount = \Drupal::config('movie_budget.settings')->get('budget_amount');
-    $movie_amount = $node->get('field_movie_amount')->value;
+  if ($node->getType() === 'movie_entity') {
+    $budget_amount = \Drupal::config('budget_movie_amount.settings')->get('budget_amount');
+    $movie_amount = $node->get('movie_price')->value;
 
     if ($budget_amount < $movie_amount) {
       $message = 'The movie is over budget';
